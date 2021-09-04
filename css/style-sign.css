@@ -1,0 +1,70 @@
+.container-login{
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+    min-height: 90%;
+    background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.082) ,#00000011), url(http://localhost/niru_tech/img/sebastian-kanczok-q_lEm5iDLYQ-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+  
+   }
+  
+
+.sign{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 360px;
+    height: 420px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: aliceblue;
+    border-radius: 30px;
+    border: 3px solid rgba(255, 206, 47, 0.658);
+}
+
+.sign h1{
+    margin-left: 70px;
+}
+.from-group{
+    margin: 20px;
+}
+.from-group label{
+    font-size: 20px;
+    margin: 10px;
+}
+.from-group input{
+    border: none;
+    outline: none;
+    height: 35px;
+    margin: 5px;
+    width: 80%;
+    background: transparent;
+    border-bottom: 2px solid rgb(255, 52, 52);
+    color: antiquewhite;
+}
+#btn{
+    border: none;
+    font-size: 20px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 30px;
+    margin-left: 60px;
+    color: aliceblue;
+}
+.sign a{
+    margin-top: 50px;
+    margin-left: 30px;
+    color: rgb(255, 253, 253);
+    text-decoration: none;
+    font-size: 16px;
+}
+#incorrect{
+    margin-left: 30px;
+    margin-top: 20px;
+    color: rgb(255, 0, 0);
+    display: none;
+}

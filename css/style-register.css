@@ -1,0 +1,61 @@
+.container-login{
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+    min-height: 90%;
+    background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.144) ,rgba(99, 92, 92, 0.233)), url(http://localhost/niru_tech/img/4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+  
+   }
+.register{
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    width: 360px;
+    height: 460px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: aliceblue;
+    border-radius: 30px;
+    border: 3px solid rgba(255, 206, 47, 0.658);
+}
+
+.register h1{
+    margin-left: 20px;
+}
+.from-group{
+    margin: 20px;
+}
+.from-group label{
+    font-size: 20px;
+    margin: 10px;
+}
+.from-group input{
+    border: none;
+    outline: none;
+    height: 35px;
+    margin: 5px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid rgb(255, 52, 52);
+    color: antiquewhite;
+}
+#btn{
+    border: none;
+    font-size: 20px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 30px;
+    margin-left: 60px;
+    color: aliceblue;
+}
+.register a{
+    margin-left: 70px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 15px;
+}

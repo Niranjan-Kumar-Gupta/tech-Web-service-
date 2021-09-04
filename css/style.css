@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* header-------------------------------------------------- */
+.header{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    background-color: black;
+    height: 80px;  
+    color: aliceblue;
+    z-index: 99;
+}
+.header img{
+   width: 45px;
+   height: 45px;
+   margin-left: 40px;
+   margin-top: 18px;
+}
+
+#niru{
+    margin-left: 20px;
+    margin-top: 18px;
+    font-style: italic;
+    font-family: serif;
+    float: left;
+}
+.menu{
+    display: block;
+    float: right;
+    position: relative;
+    right: 0px;
+    width: 80%;
+    text-align: right;
+    padding-top: 20px;
+}
+.menu a{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 0px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+   
+}
+.menu a:hover{
+    border-bottom: 2px solid rgb(0, 247, 255);
+    transform: scale(1.05);
+    color: rgb(0, 247, 255);
+}
+
+/* header  end-------------------------------------------------- */
+
+/* container-------------------------------------------------- */
+

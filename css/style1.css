@@ -1,0 +1,54 @@
+.container{
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+    min-height: 90%;
+    background-image: url(http://localhost/niru_tech/drone.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+  
+   }
+   .container_text{
+      color: aliceblue;
+      font-style: italic;
+      width: 35%;
+      background-color: rgba(5, 5, 5, 0.281);
+   }
+.container_text h1{
+    margin-top: 180px;
+    margin-left: 60px;
+}
+.btn{
+    margin-left: 60px;
+}
+.container_text button{
+    margin-top: 70px;
+    margin-left:20px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,rgb(205, 13, 212),rgb(32, 28, 255));
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.container_text button a{
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.container button:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+    background-image: linear-gradient(to left,rgb(179, 13, 212),rgb(32, 28, 255));
+}
+#canvas1{
+    background-color: rgba(5, 5, 5, 0.281);
+    width: 1000px;
+    height: 650px;
+}

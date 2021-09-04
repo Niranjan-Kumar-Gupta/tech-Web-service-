@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        canvas {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+            background: #03000e;
+        }
+        #btn{
+            position: absolute;
+            z-index: 99;
+            bottom: 8%;
+            left: 40%;
+            padding: 10px;
+            background-color: #b006ff4d;
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <button id="btn">Random</button>
+
+    <script>
+        const canvas = document.getElementById('canvas1');
+        const ctx = canvas.getContext('2d');
+
+        const singin = document.getElementById('singin');
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        window.addEventListener('resize', function () {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+        });
+
+        let ball = [];
+
+        class Ball {
+            constructor() {
+                this.x = Math.random() * (canvas.width -50) +20;
+                this.y = Math.random() * (canvas.height -120)+20;
+                this.size = 8;
+                this.theta = Math.random() * 5;
+                this.speedY = 1;
+                this.speedX = 1;
+
+            }
+            draw() {
+                ctx.fillStyle = 'red'
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+            update() {
+               
+                if (this.y < this.size || this.y > canvas.width-this.size) {
+                    this.speedY *= -1;
+                }
+                if ( this.x > canvas.width-this.size || this.x < this.size) {
+                    this.speedX *= -1;
+                    console.log('ugdgu')
+                }
+                this.y += 0.2 * Math.sin(this.theta) * this.speedY;
+                this.x += 0.2 * Math.cos(this.theta) * this.speedX;
+                this.theta += 0.005;
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            ball.push(new Ball())
+        }
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        function handleBall() {
+            for (let i = 0; i < ball.length; i++) {
+                ball[i].draw();
+                ball[i].update();
+            }
+        }
+
+        function connectLine() {
+            clear();
+            let opacity = 1;
+
+            for (let i = 0; i < ball.length; i++) {
+                for (let j = i; j < ball.length; j++) {
+                    let disx = ball[i].x - ball[j].x;
+                    let disy = ball[i].y - ball[j].y;
+                    let distance = Math.sqrt(disx * disx + disy * disy);
+                    opacity = 1 - (distance / 300);
+                    ctx.strokeStyle = 'rgba(255,255,255,' + opacity + ')';
+                    if (distance < 350) {
+                        ctx.beginPath();
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(ball[i].x, ball[i].y);
+                        ctx.lineTo(ball[j].x, ball[j].y);
+                        ctx.closePath();
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        setInterval(() => {
+            connectLine();
+            handleBall();
+        }, 1000 / 60)
+        document.getElementById('btn').addEventListener('click',()=>{
+            ball = [];
+            for (let i = 0; i < 100; i++) {
+               ball.push(new Ball())
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
